@@ -215,9 +215,16 @@ const { gl, viewport } = useThree();
 - the rotation speed is adjusted based on the horizontal movement of the pointer.
 
 
+* if (Math.abs(rotationSpeed.current) < 0.001) {}
+- returns the absolute value of a number. 
+- In this case, it is being used to ensure that the rotation speed is always positive, regardless of its initial sign.
 
 
 
+
+
+=================================================================
+=================================================================
 =================================================================
 * in                     Island.jsx
 * useFrame section:
@@ -242,4 +249,39 @@ const { gl, viewport } = useThree();
 * ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI) 
   - applies another modulo operation to the value obtained in step 2. 
   - This step guarantees that the value always stays within the range of 0 to 2 * Math.PI, which is "equivalent to a "full-circle" in radians".
+
+
+
+
+*  const dampingFactor = 0.95;
+- is commonly used in the context of simulating physical interactions such as damping(adjustment) or friction within animations or simulations.
+
+- When set to a value like 0.95, it determines the rate at which an object's velocity decreases over time, effectively controlling how quickly an object comes to rest or slows down.
+
+
+* e.stopPropagation();
+- used to prevent the further propagation(spreading) of an event through the DOM tree. 
+- you are stopping this propagation process, ensuring that the event does not reach higher-level elements.
+
+- When an event occurs on an element, such as a mouse click or key press, it typically triggers handlers on that element and then bubbles up through its parent elements. 
+
+
+
+
+=================================================================
+=================================================================
+
+* in                     Plane.jsx
+
+* const { actions } = useAnimations(animations, ref);
+- useAnimations, enables you to work with animations in a Three.js environment. 
+
+- This hook allows you to control and manage animations applied to 3D models within your scene. 
+
+- provides functionality such as playing, pausing, stopping, or adjusting the speed of animations on your 3D models. 
+
+
+
+
+
 */

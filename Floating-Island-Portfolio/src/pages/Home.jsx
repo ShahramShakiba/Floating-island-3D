@@ -12,8 +12,9 @@ import Loader from '../components/Loader';
 }
 export default function Home() {
   const [isRotating, setIsRotating] = useState(false);
+  const [currentStage, setCurrentStage] = useState(1);
 
-  //============ Island
+  //============ Island Screen Size
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
     let screenPosition = [0, -6.5, -43];
@@ -30,7 +31,7 @@ export default function Home() {
   const [islandScale, islandPosition, islandRotation] =
     adjustIslandForScreenSize();
 
-  //============ Plane
+  //============ Plane Screen Size
   const adjustPlaneForScreenSize = () => {
     let screenScale, screenPosition;
 
@@ -71,6 +72,7 @@ export default function Home() {
             rotation={islandRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
           />
           <Plane
             planeScale={planeScale}

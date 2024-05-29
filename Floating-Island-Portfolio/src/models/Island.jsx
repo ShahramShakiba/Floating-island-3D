@@ -5,7 +5,12 @@ import { useRef, useEffect } from 'react';
 import { a } from '@react-spring/three';
 import islandScene from '../assets/3D/island.glb';
 
-export default function Island({ isRotating, setIsRotating, ...props }) {
+export default function Island({
+  isRotating,
+  setIsRotating,
+  setCurrentStage,
+  ...props
+}) {
   const islandRef = useRef();
   const { nodes, materials } = useGLTF(islandScene);
   //access renderer & camera|viewport
@@ -17,7 +22,7 @@ export default function Island({ isRotating, setIsRotating, ...props }) {
   //control rotation damping
   const dampingFactor = 0.95;
 
-  // Handle pointer (mouse or touch) down event
+  // Handle pointer |mouse or touch| down event
   const handlePointerDown = (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -40,10 +45,10 @@ export default function Island({ isRotating, setIsRotating, ...props }) {
 
     if (isRotating) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-      //adjusting the rotation based on user interaction
+      //calculated the difference between the current and the previous position
       const delta = (clientX - lastX.current) / viewport.width;
 
-      //adjust the island rotation speed based on the mouse/touch movement
+      //adjust the island-rotation-speed based on the mouse/touch movement
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
@@ -66,10 +71,10 @@ export default function Island({ isRotating, setIsRotating, ...props }) {
     }
   };
 
-  //is called on each frame update
+  //is called on each frame update for a smooth UX
   useFrame(() => {
     if (!isRotating) {
-      //make the plane move smoother
+      //the rotation speed will decrease gradually with each frame update
       rotationSpeed.current *= dampingFactor;
 
       //stop the rotation if speed is low
@@ -80,40 +85,40 @@ export default function Island({ isRotating, setIsRotating, ...props }) {
       //slow down the island-rotation to have a smooth rotation
       islandRef.current.rotation.y += rotationSpeed.current;
     } else {
-      //When rotating, determine the current stage based on island's orientation
+      //When rotating, determine the current-stage based on island's orientation
       const rotation = islandRef.current.rotation.y;
 
       //rotation stays in a "full-circle" in radians
       const normalizedRotation =
         ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
 
-      //Set the current-stages(like about, ...) based on the orientation
-      // switch (true) {
-      //   case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
-      //     setCurrentStage(4);
-      //     break;
+      // Set the current-stages(like about, ...) based on the orientation
+      switch (true) {
+        case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
+          setCurrentStage(4);
+          break;
 
-      //   case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
-      //     setCurrentStage(3);
-      //     break;
+        case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
+          setCurrentStage(3);
+          break;
 
-      //   case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
-      //     setCurrentStage(2);
-      //     break;
+        case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+          setCurrentStage(2);
+          break;
 
-      //   case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
-      //     setCurrentStage(1);
-      //     break;
+        case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
+          setCurrentStage(1);
+          break;
 
-      //   default:
-      //     setCurrentStage(null);
-      // }
+        default:
+          setCurrentStage(null);
+      }
     }
   });
 
   // move the island with "touch" or "mouse"
   useEffect(() => {
-    //attach all these elements to the regular DOM
+    //attach all these elements to the regular-DOM(Canvas)
     const canvas = gl.domElement;
 
     //Add event listeners for pointer and keyboard events
@@ -123,7 +128,7 @@ export default function Island({ isRotating, setIsRotating, ...props }) {
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('keyup', handleKeyUp);
 
-    //Remove event listeners when component unmounts
+    //clean up fn - remove event listeners when component unmounts
     return () => {
       canvas.removeEventListener('pointerdown', handlePointerDown);
       canvas.removeEventListener('pointerup', handlePointerUP);
