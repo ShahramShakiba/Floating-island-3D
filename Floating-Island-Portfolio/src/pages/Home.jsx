@@ -3,6 +3,8 @@ import { Suspense } from 'react';
 import Sky from '../models/Sky';
 import Island from '../models/Island';
 import Loader from '../components/Loader';
+import Bird from '../models/Bird';
+import Plane from '../models/Plane';
 {
   /* <div className="absolute top-28 left-0 right-0 z-10 flex justify-center items-center">
   POPUP
@@ -41,12 +43,14 @@ export default function Home() {
             intensity={0.8}
           />
 
+          <Bird />
           <Sky />
           <Island
             position={islandPosition}
             scale={islandScale}
             rotation={islandRotation}
           />
+          <Plane />
         </Suspense>
       </Canvas>
     </section>
