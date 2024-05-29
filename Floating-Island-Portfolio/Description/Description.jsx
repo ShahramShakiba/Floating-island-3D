@@ -162,4 +162,12 @@ import { useGLTF } from '@react-three/drei';
 to this:
 
 - const { nodes, materials } = useGLTF(islandScene);
+
+
+
+================================================================
+
+* <primitive object={} />     component
+- is utilized to render raw objects or complex scenes "without converting" them into React components. 
+- By using <primitive>, you can efficiently integrate external 3D models or assets into your 3D scene while maintaining performance and flexibility.
 */
