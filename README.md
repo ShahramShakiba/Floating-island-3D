@@ -32,6 +32,17 @@
 > _Which Concepts in Have I Covered_: 
 ##### _Using React Router Component to set our routes_
 ##### _Using NavLink Component_
+##### _Install & Using React-three-fiber: A React renderer for Three.js_
+##### _Using 'Canvas' Component: enabling the rendering of 3D scenes and animations using Three.js under the hood._
+##### _Using 'Suspense' Component: better user experience by showing "loading-indicators" or "fallback-content" while waiting for data fetching_
+##### _Install & Using React-three-drei: acts as a bridge between React and Three.js to turn jsx to 3D_
+##### _Install & Use React-spring-three: to facilitate the integration of "animations" and "transitions" into 3D scenes_
+##### _Add the Island to the Scene and Adjust it for Screen size_
+##### _Add 'directionalLight', 'ambientLight' and 'hemisphereLight' to the Scene_
+##### _Add the Sky to the Scene using <primitive /> Component_
+##### _Add functionality to rotate the Island with Mouse Event or Touch Event_
+##### _Use 'useEffect' & 'useFrame' to update Island rotation_
+##### _Utilizing Plane Rotation using useAnimations Hook_
 
  
 <br/><br/>
