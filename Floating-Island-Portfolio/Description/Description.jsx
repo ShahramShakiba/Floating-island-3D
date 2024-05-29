@@ -170,4 +170,76 @@ to this:
 * <primitive object={} />     component
 - is utilized to render raw objects or complex scenes "without converting" them into React components. 
 - By using <primitive>, you can efficiently integrate external 3D models or assets into your 3D scene while maintaining performance and flexibility.
+
+
+
+================================================================
+
+const { gl, viewport } = useThree();
+
+* gl:
+- refers to the WebGL context, which is essential for rendering 3D graphics in a web browser. 
+- WebGL (Web Graphics Library) is a JavaScript API that allows for high-performance 3D graphics rendering within the browser.
+
+
+* viewport:
+- represents the area of the screen where the 3D scene will be rendered.
+- It includes properties like width, height, and aspect ratio, which are crucial for setting up the camera and adjusting the rendering output to fit the screen size.
+
+
+
+================================================================
+
+* const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+-  this line of code determines whether the user interaction is via touch (on a touchscreen device) or via a mouse click.
+
+- e.touches:  
+  Represents an array of touch points associated with the event.
+
+- e.touches[0].clientX:  
+  Retrieves the X coordinate of the first touch point relative to the viewport.
+
+- e.clientX: 
+  Retrieves the X coordinate of the mouse pointer relative to the viewport.
+
+
+
+* const delta = (clientX - lastX.current) / viewport.width;
+- adjusting the rotation of an element based on user interaction
+
+- calculated as the difference between the current `clientX` position and the previous `lastX.current` position, divided by the `viewport.width`.
+- This calculation determines the amount of change in the horizontal position of the pointer relative to the viewport width.
+
+
+* islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+- the rotation speed is adjusted based on the horizontal movement of the pointer.
+
+
+
+
+
+=================================================================
+* in                     Island.jsx
+* useFrame section:
+* const normalizedRotation =
+*       ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+
+
+? Normalize the rotation value to ensure it stays within the range [0, 2 * Math.PI].
+- The goal is to ensure that the rotation value remains within a specific range to prevent potential issues with "very large" or "negative rotation values".
+
+
+* rotation % (2 * Math.PI) 
+  - calculates the remainder of the rotation value when divided by 2 * Math.PI
+  
+  This essentially wraps the rotation value around once it reaches a full circle (360 degrees) so that it stays within the range of "0" to 2 * Math.PI.
+
+
+* (rotation % (2 * Math.PI)) + 2 * Math.PI 
+  - adds   2 * Math.PI to the result from step 1.
+  - This is done to ensure that the value "remains positive" and within the range of 0 to 2 * Math.PI even if it was negative after the modulo operation in step 1.
+
+* ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI) 
+  - applies another modulo operation to the value obtained in step 2. 
+  - This step guarantees that the value always stays within the range of 0 to 2 * Math.PI, which is "equivalent to a "full-circle" in radians".
 */
