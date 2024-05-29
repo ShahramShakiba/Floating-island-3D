@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/*======================= Root ======================= */
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
@@ -13,6 +14,7 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+/*  targeting a specific element with the class "card" that has a data attribute "data-color" set to "blue" and is being hovered over.  */
 body:has(.card[data-color="blue"]:hover) {
   background-color: rgb(var(--blue-rgb) / 25%);
 }
@@ -21,6 +23,8 @@ body:has(.card[data-color="green"]:hover) {
   background-color: rgb(var(--green-rgb) / 25%);
 }
 
+/*======================= utilities ======================= */
+/* styles that can be reused */
 @layer utilities {
   .max-container {
     @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
@@ -79,6 +83,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 }
 
+/*=======================  ======================= */
 .glassmorphism {
   background: rgba(8, 116, 239, 0.07);
   backdrop-filter: blur(10px);
