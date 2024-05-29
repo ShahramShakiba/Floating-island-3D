@@ -30,7 +30,8 @@
 <br/><br/>
 
 > _Which Concepts in Have I Covered_: 
-##### _...._
+##### _Using React Router Component to set our routes_
+##### _Using NavLink Component_
 
  
 <br/><br/>
