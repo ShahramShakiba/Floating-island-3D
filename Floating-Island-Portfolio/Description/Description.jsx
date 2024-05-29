@@ -1,9 +1,10 @@
-/* ============= Router ==============
-# npm install react-router-dom
-
+/* 
 * Router:
 - Router is a crucial component that enables navigation and routing within a single-page application. 
 - It allows developers to create multiple pages or views that can be accessed through different URLs without the need to reload the entire page.
+
+# npm install react-router-dom
+
 
 * Routes:
 - define the mapping between specific URLs and the components to be rendered when those URLs are accessed. 
@@ -13,6 +14,8 @@
 
 
 
+================================================================
+
 * NavLink:
 -  is a component provided by the React Router library that is used for creating navigation links in web applications.
 - It is an extension of the standard HTML anchor tag (a) and is specifically designed for use in React applications to handle client-side routing.
@@ -20,6 +23,8 @@
 - NavLink provides additional features compared to the traditional anchor tag, such as styling the active link based on the current URL, preventing the default behavior of reloading the page, and allowing for easy integration with React Router's routing capabilities.
 
 
+
+================================================================
 
 * React-three-fiber 
 - is a React renderer for three.js.
@@ -30,6 +35,20 @@
 
 
 
+================================================================
+
+import { Canvas } from '@react-three/fiber';
+
+* Canvas:
+- to create and manage a WebGL-canvas within a React component, enabling the rendering of 3D scenes and animations using Three.js under the hood.
+
+
+
+
+================================================================
+
+import { Suspense } from 'react';
+
 * Suspense:
 - handle asynchronous operations such as "data fetching" or "code-splitting". 
 
@@ -38,6 +57,8 @@
 - can create a better user experience by showing "loading-indicators" or "fallback-content" while waiting for data to be fetched or components to be loaded.
 
 
+
+================================================================
 
 * drei:
 - whenever you rendering something within the Canvas it has to be a special 3D property
@@ -54,11 +75,15 @@ import { Html } from '@react-three/drei';
 
 
 
+================================================================
+
 * https://gltf.pmnd.rs/   | add animations to our meshes
 - load glb-models into our Three.js scene
 - turns .glb files into jsx component
 
 
+
+================================================================
 
 * Spring: to enable animations
 - designed to facilitate the integration of "animations" and "transitions" into 3D scenes built with Three.js within a React application.
@@ -89,4 +114,52 @@ import { a } from '@react-spring/three';
 </a.group>
 
 - now, this is an animated-group
+
+
+
+================================================================
+
+import { useFrame, useThree } from '@react-three/fiber';
+
+* useFrame:
+- This hook allows you to efficiently update and render animations within your Three.js scene. 
+
+- By using `useFrame`, you can define functions that will be executed on every frame of the animation loop, enabling dynamic and interactive visual effects in your application.
+
+
+* useThree:
+- This hook provides access to essential Three.js elements such as the "renderer", "scene", "camera", and more. 
+
+- With `useThree`, you can easily interact with and manipulate these components to customize your 3D scene according to your requirements.
+
+
+
+
+================================================================
+
+import { useGLTF } from '@react-three/drei';
+
+* useGLTF:
+- simplifies the process of loading 3D models in GLTF format into a Three.js scene within a React application.
+
+
+
+================================================================
+
+! handling ERRORs:
+
+! Failed to parse source for import analysis because the content contains invalid JS syntax. You may need to install appropriate plugins to handle the .glb file format, or if it's an asset, add "** / *.glb" to `assetsInclude` in your configuration.
+
+? go: vite.config.js   and add:
+- assetsInclude: ['** /*.glb'],
+
+
+! Could not load /island.glb: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+
+? go Island.jsx   and modify:
+- const { nodes, materials } = useGLTF('/island.glb');
+
+to this:
+
+- const { nodes, materials } = useGLTF(islandScene);
 */
