@@ -43,6 +43,11 @@
 ##### _Add functionality to rotate the Island with Mouse Event or Touch Event_
 ##### _Use 'useEffect' & 'useFrame' to update Island rotation_
 ##### _Utilizing Plane Rotation using useAnimations Hook_
+##### _Make the Bird fly across th Island using 'useEffect' & 'useFrame'_
+##### _Implementing Content for all stages in the Island_
+##### _Add Contact Form_
+##### _Using EmailJS to send emails directly_
+##### _Add a Fox to the Contact Scene, then active animations for the Fox_
 
  
 <br/><br/>
