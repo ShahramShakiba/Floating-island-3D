@@ -8,8 +8,15 @@ export default function Fox({ currentAnimation, ...props }) {
   const { actions } = useAnimations(animations, foxRef);
 
   useEffect(() => {
+    //to have those actions like walk, run| get the key and stop them
+    Object.values(actions).forEach((action) => action.stop());
 
-  }, [actions, currentAnimation])
+    //then if there's actions and get animations to play
+    if (actions[currentAnimation]) {
+      actions[currentAnimation].play();
+    }
+    console.log(actions);
+  }, [actions, currentAnimation]);
 
   return (
     <group ref={foxRef} {...props} dispose={null}>

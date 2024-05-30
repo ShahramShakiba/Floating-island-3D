@@ -12,6 +12,7 @@ export default function Contact() {
     message: '',
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [currentAnimation, setCurrentAnimation] = useState('idle');
 
   const handleChange = (e) => {
     setForm({
@@ -23,6 +24,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setCurrentAnimation('hit'); //fox-running
 
     emailjs
       .send(
@@ -43,15 +45,19 @@ export default function Contact() {
         //show success msg
         //hide an alert
 
-        //clear the form after sending
-        setForm({
-          name: '',
-          email: '',
-          message: '',
-        });
+        setTimeout(() => {
+          setCurrentAnimation('idle');
+          //clear the form after sending
+          setForm({
+            name: '',
+            email: '',
+            message: '',
+          });
+        }, [3000]);
       })
       .catch((error) => {
         setIsLoading(false);
+        setCurrentAnimation('idle');
         console.log(error);
 
         //show error msg
@@ -59,10 +65,9 @@ export default function Contact() {
   };
 
   //is called once user clicked on input to track the fox
-  const handleFocus = () => {};
-
+  const handleFocus = () => setCurrentAnimation('walk');
   //is called once user clicked out
-  const handleBlur = () => {};
+  const handleBlur = () => setCurrentAnimation('idle');
 
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
@@ -137,6 +142,7 @@ export default function Contact() {
 
           <Suspense fallback={<Loader />}>
             <Fox
+              currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
               rotation={[12.6, -0.65, 0]}
               scale={[0.53, 0.53, 0.53]}
