@@ -1,5 +1,8 @@
-import { useRef, useState } from 'react';
+import { Suspense, useRef, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
 import emailjs from '@emailjs/browser';
+import Fox from '../models/Fox';
+import Loader from '../components/Loader';
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -39,7 +42,7 @@ export default function Contact() {
 
         //show success msg
         //hide an alert
-        
+
         //clear the form after sending
         setForm({
           name: '',
@@ -125,6 +128,21 @@ export default function Contact() {
             {isLoading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
+      </div>
+
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
+        <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }}>
+          <directionalLight intensity={2.5} position={[0, 0, 1]} />
+          <ambientLight intensity={0.3} />
+
+          <Suspense fallback={<Loader />}>
+            <Fox
+              position={[0.5, 0.35, 0]}
+              rotation={[12.6, -0.65, 0]}
+              scale={[0.53, 0.53, 0.53]}
+            />
+          </Suspense>
+        </Canvas>
       </div>
     </section>
   );
