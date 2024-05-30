@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import shahram from '../assets/Sh.jpg';
-import {arrow} from '../assets/icons';
+import { arrow } from '../assets/icons';
 
 const InfoBox = ({ text, link, btnText }) => (
-  <div className="info-box w-[34rem]">
-    <p className="font-medium sm:text-lg text-center px-6 text-cyan-100">
+  <div className="info-box w-[32rem]">
+    <p className="font-medium sm:text-lg text-center px-4 text-cyan-100">
       {text}
     </p>
     <Link to={link} className="neo-brutalism-white neo-btn ">
@@ -38,13 +38,25 @@ const renderContent = {
   ),
   2: (
     <InfoBox
-      text="My expertise in leveraging frameworks like (React.js), (Next.js), (Tailwind CSS) and (Three.js) empowers me to develop dynamic, user-centric web applications that substantially maximize user engagement and elevate functionality to new heights."
+      text="My expertise in React.js, Next.js, Tailwind CSS and Three.js  drives dynamic, user-centric web apps, maximizing engagement and functionality."
       link="/about"
-      btnText="Learn more about me!"
+      btnText="Learn More About Me!"
     />
   ),
-  3: <h1>3</h1>,
-  4: <h1>4</h1>,
+  3: (
+    <InfoBox
+      text="Discover my Frontend projects, each illustrating unique challenges and solutions, showcasing my commitment to quality and innovation."
+      link="/projects"
+      btnText="View My Work"
+    />
+  ),
+  4: (
+    <InfoBox
+      text="Seeking a project developer? I'm here, ready to surpass expectations!"
+      link="/contact"
+      btnText="Let's Talk"
+    />
+  ),
 };
 
 export default function HomeInfo({ currentStage }) {
