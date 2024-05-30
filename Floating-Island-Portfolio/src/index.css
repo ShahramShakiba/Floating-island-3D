@@ -170,7 +170,7 @@ body:has(.card[data-color="green"]:hover) {
   transform: translateZ(80px) translateY(-5px) rotateX(15deg) rotateY(15deg);
 }
 
-/* Neo Brutalism */
+/*=================== Neo Brutalism =================*/
 .neo-brutalism-blue {
   background: #632be7da;
   position: relative;

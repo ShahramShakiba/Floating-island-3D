@@ -46,7 +46,6 @@ export default function Home() {
 
   return (
     <section className="w-full h-screen relative">
-      {/* popup */}
       <div className="absolute top-28 left-0 right-0 z-10 flex justify-center items-center">
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
