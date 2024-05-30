@@ -299,7 +299,8 @@ const { gl, viewport } = useThree();
 =================================================================
 =================================================================
 
-* in                     Bird.jsx
+* EmailJS to send emails directly
+# npm install @emailjs/browser
 
 
 */
