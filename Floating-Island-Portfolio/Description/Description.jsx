@@ -283,5 +283,13 @@ const { gl, viewport } = useThree();
 
 
 
+=================================================================
+=================================================================
 
+* in                     Sky.jsx
+
+* useFrame((_, delta) => {}
+-  'delta' is a crucial parameter that helps maintain "smooth" and "consistent" animations in your 3D scene by adjusting the rotation speed based on the time elapsed between frames. 
+
+- It ensures that animations are frame-rate independent and provide a more realistic and visually appealing user experience.
 */
