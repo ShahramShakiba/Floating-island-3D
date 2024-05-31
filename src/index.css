@@ -190,33 +190,29 @@ body:has(.card[data-color='green']:hover) {
 
 .nav-link {
   position: relative;
-  display: inline-block;
-  padding: 5px 10px;
   text-decoration: none;
   transition: color 0.3s;
-  overflow: hidden;
-  border-radius: 5px;
 }
 
-.nav-link::before {
+.nav-link::after {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
   left: 0;
-  background: linear-gradient(to right, #669cf5, #134ae0); 
-  transition: transform 0.4s ease;
-  transform: translateX(-100%);
-  z-index: -1;
+  background: #000;
+  transition: width 0.4s ease, left 0.4s ease;
 }
 
-.nav-link:hover::before {
-  transform: translateX(0);
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
 }
 
-.nav-link.text-blue-500 {
-  color: #85a5d8;
+.text-blue-500.nav-link::after {
+  background: #3b82f6; /* Adjust this to match your blue color */
 }
 
 /* Add this CSS to your global styles file */
