@@ -9,7 +9,7 @@ export default function CTA() {
         Let's collaborate and bring it to life!
       </p>
 
-      <Link to='/contact' className='btn shadow-xl'>
+      <Link to='/contact' className='btn shadow-xl gradient-hover'>
         Contact Me
       </Link>
     </section>

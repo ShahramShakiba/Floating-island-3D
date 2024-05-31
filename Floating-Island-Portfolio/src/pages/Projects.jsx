@@ -45,24 +45,24 @@ export default function Projects() {
                 {project.name}
               </h4>
               <p className="mt-2 text-slate-500">{project.description}</p>
-              <div className="mt-5 flex items-center gap-2 font-poppins">
+              <div className="mt-5 flex items-center gap-2 font-poppins transform transition-transform duration-300 hover:translate-x-2 w-36">
                 <Link
                   to={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-blue-500"
+                  className="font-semibold text-blue-500 "
                 >
                   Codebase Link
                 </Link>
                 <img
                   src={arrow}
                   alt="arrow"
-                  className="w-4 h-4 object-contain"
+                  className="w-4 h-4 object-contain cursor-pointer"
                 />
               </div>
 
               {project.liveLink && (
-                <div className="flex items-center gap-2 font-poppins">
+                <div className="mt-4 flex items-center gap-2 font-poppins transform transition-transform duration-300 hover:-translate-x-2 w-20">
                   <Link
                     to={project.liveLink}
                     target="_blank"

@@ -4,13 +4,14 @@ import Sky from '../models/Sky';
 import Bird from '../models/Bird';
 import Plane from '../models/Plane';
 import Island from '../models/Island';
+// import rose from '../assets/rose.mp3';
+import forest from '../assets/forest.mp3';
 import Loader from '../components/Loader';
-import sakura from '../assets/sakura.mp3';
 import HomeInfo from '../components/HomeInfo';
 import { soundoff, soundon } from '../assets/icons';
 
 export default function Home() {
-  const audioRef = useRef(new Audio(sakura));
+  const audioRef = useRef(new Audio(forest));
   audioRef.current.volume = 0.4;
   audioRef.current.loop = true;
   const [isRotating, setIsRotating] = useState(false);

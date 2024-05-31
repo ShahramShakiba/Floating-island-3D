@@ -172,9 +172,9 @@ body:has(.card[data-color='green']:hover) {
 
 /*=================== Neo Brutalism =================*/
 .neo-brutalism-blue {
-  background: #632be7da;
+  background: #4b1fb3c7;
   position: relative;
-  border-radius: 8% 1%;
+  border-radius: 55% /10%;
   border: #2b76e7b4;
   box-shadow: 0.6vmin 0.6vmin #336cc1e3, 1vmin 1vmin #632be794,
     1vmin 1vmin #632be7c2, 0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092dbb2;
@@ -186,4 +186,56 @@ body:has(.card[data-color='green']:hover) {
   color: #11d3f3;
   box-shadow: 0.6vmin 0.6vmin #5386afb4, 1vmin 1vmin #d2e4ff,
     1vmin 1vmin #d2e4ff, 0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, #669cf5, #134ae0); 
+  transition: transform 0.4s ease;
+  transform: translateX(-100%);
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  transform: translateX(0);
+}
+
+.nav-link.text-blue-500 {
+  color: #85a5d8;
+}
+
+/* Add this CSS to your global styles file */
+.gradient-hover {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: #fff; 
+  background: linear-gradient(
+    to left,
+    #5b99fc,
+    #122b72
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.5s ease-out;
+}
+
+.gradient-hover:hover {
+  background-position: left bottom;
 }

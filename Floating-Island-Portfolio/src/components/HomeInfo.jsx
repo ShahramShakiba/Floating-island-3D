@@ -10,9 +10,14 @@ const InfoBox = ({ title, text, link, btnText }) => (
     <p className="font-medium sm:text-lg text-center px-4 text-cyan-100">
       {text}
     </p>
-    <Link to={link} className="neo-brutalism-white neo-btn ">
-      {btnText}
-      <img src={arrow} alt="Arrow right" className="w-4 h-4 object-contain" />
+    <Link
+      to={link}
+      className="neo-brutalism-white neo-btn relative overflow-hidden inline-block"
+    >
+      <div className="flex items-center space-x-2 transform transition-transform duration-300 hover:translate-x-2">
+        <span>{btnText}</span>
+        <img src={arrow} alt="Arrow right" className="w-4 h-4 object-contain" />
+      </div>
     </Link>
   </div>
 );
@@ -23,7 +28,7 @@ const renderContent = {
       <img
         src={shahram}
         alt="Shahram's Image"
-        className="w-20 h-20 border rounded-full object-cover shadow-xl opacity-25 hover:opacity-90 transition-opacity duration-300"
+        className="w-20 h-20 border rounded-full object-cover shadow-xl opacity-85 hover:opacity-100 transition-opacity duration-300"
       />
       <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-6 px-8 text-violet-200 mx-5 ">
         Hi, I am <span className="font-semibold ">Shahram.</span>
