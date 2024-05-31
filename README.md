@@ -48,6 +48,8 @@
 ##### _Add Contact Form_
 ##### _Using EmailJS to send emails directly_
 ##### _Add a Fox to the Contact Scene, then active animations for the Fox_
+##### _Create a Custom Hook for Alert Message_
+##### _Using react-vertical-timeline-component for showcasing Work Experience_
 
  
 <br/><br/>
