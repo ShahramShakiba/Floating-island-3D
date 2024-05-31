@@ -2,8 +2,11 @@ import { Link } from 'react-router-dom';
 import shahram from '../assets/Sh.jpg';
 import { arrow } from '../assets/icons';
 
-const InfoBox = ({ text, link, btnText }) => (
+const InfoBox = ({ title, text, link, btnText }) => (
   <div className="info-box w-[32rem]">
+    <p className="font-medium sm:text-lg text-center bg-purple-800 rounded-full w-1/3 mx-auto">
+      {title}
+    </p>
     <p className="font-medium sm:text-lg text-center px-4 text-cyan-100">
       {text}
     </p>
@@ -38,6 +41,7 @@ const renderContent = {
   ),
   2: (
     <InfoBox
+      title="About Me"
       text="My expertise in React.js, Next.js, Tailwind CSS and Three.js  drives dynamic, user-centric web apps, maximizing engagement and functionality."
       link="/about"
       btnText="Learn More About Me!"
@@ -45,6 +49,7 @@ const renderContent = {
   ),
   3: (
     <InfoBox
+      title="Projects"
       text="Discover my Frontend projects, each illustrating unique challenges and solutions, showcasing my commitment to quality and innovation."
       link="/projects"
       btnText="View My Work"
@@ -52,6 +57,7 @@ const renderContent = {
   ),
   4: (
     <InfoBox
+      title="Contact Me"
       text="Seeking a project developer? I'm here, ready to surpass expectations!"
       link="/contact"
       btnText="Let's Talk"

@@ -1,11 +1,9 @@
-import {  zur, starbucks, tesla } from '../assets/images';
+import { zur } from '../assets/images';
 import {
-  car,
   contact,
   three,
   css,
   blender,
-  estate,
   git,
   github,
   html,
@@ -17,14 +15,11 @@ import {
   nextjs,
   xd,
   photoshop,
-  pricewise,
   figma,
   react,
   vsCode,
   redux,
-  summiz,
   tailwindcss,
-  threads,
   typescript,
 } from '../assets/icons';
 
@@ -121,11 +116,6 @@ export const skills = [
     type: 'Database',
   },
   // {
-  //   imageUrl: mui,
-  //   name: 'Material-UI',
-  //   type: 'Frontend',
-  // },
-  // {
   //   imageUrl: typescript,
   //   name: 'TypeScript',
   //   type: 'Frontend',
@@ -172,7 +162,7 @@ export const socialLinks = [
 
 export const projects = [
   {
-    iconUrl: pricewise,
+    iconUrl: '',
     theme: 'btn-back-red',
     name: '3D Portfolio',
     description:
@@ -180,7 +170,7 @@ export const projects = [
     link: 'https://github.com/ShahramShakiba/ThreeJS-Portfolio',
   },
   {
-    iconUrl: threads,
+    iconUrl: '',
     theme: 'btn-back-green',
     name: 'Next Level Food',
     description:
@@ -188,7 +178,7 @@ export const projects = [
     link: 'https://github.com/ShahramShakiba/NextJS-FoodLovers',
   },
   {
-    iconUrl: car,
+    iconUrl: '',
     theme: 'btn-back-blue',
     name: 'React Challenges',
     description:
@@ -197,7 +187,7 @@ export const projects = [
   },
 
   {
-    iconUrl: estate,
+    iconUrl: '',
     theme: 'btn-back-black',
     name: 'Home Smart Landing Page',
     description:
@@ -205,7 +195,7 @@ export const projects = [
     link: 'https://github.com/ShahramShakiba/HomeSmart-Landing-Page',
   },
   {
-    iconUrl: summiz,
+    iconUrl: '',
     theme: 'btn-back-yellow',
     name: 'Bank Landing Page',
     description:
