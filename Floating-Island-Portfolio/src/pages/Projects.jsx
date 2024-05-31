@@ -34,7 +34,7 @@ export default function Projects() {
                 <img
                   src={project.iconUrl}
                   alt="Project Icon"
-                  className="w-1/2 h-1/2 object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
@@ -50,9 +50,9 @@ export default function Projects() {
                   to={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-blue-600"
+                  className="font-semibold text-blue-500"
                 >
-                  Live Link
+                  Codebase Link
                 </Link>
                 <img
                   src={arrow}
@@ -60,6 +60,19 @@ export default function Projects() {
                   className="w-4 h-4 object-contain"
                 />
               </div>
+
+              {project.liveLink && (
+                <div className="flex items-center gap-2 font-poppins">
+                  <Link
+                    to={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-teal-500"
+                  >
+                    Live Link
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         ))}

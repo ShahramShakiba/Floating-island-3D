@@ -1,4 +1,4 @@
-import { zur } from '../assets/images';
+import { zur, _3d, food, todo, home, bank } from '../assets/images';
 import {
   contact,
   three,
@@ -162,7 +162,7 @@ export const socialLinks = [
 
 export const projects = [
   {
-    iconUrl: '',
+    iconUrl: _3d,
     theme: 'btn-back-red',
     name: '3D Portfolio',
     description:
@@ -170,7 +170,7 @@ export const projects = [
     link: 'https://github.com/ShahramShakiba/ThreeJS-Portfolio',
   },
   {
-    iconUrl: '',
+    iconUrl: food,
     theme: 'btn-back-green',
     name: 'Next Level Food',
     description:
@@ -178,28 +178,31 @@ export const projects = [
     link: 'https://github.com/ShahramShakiba/NextJS-FoodLovers',
   },
   {
-    iconUrl: '',
+    iconUrl: todo,
     theme: 'btn-back-blue',
     name: 'React Challenges',
     description:
       'Designed and built React Apps to breathe life into the user interface by creating fluid and visually appealing animations that captivate users and elevate their overall experience.',
     link: 'https://github.com/ShahramShakiba/Framer-Motion-Basic',
+    liveLink: 'https://framer-motion-challenges-shahram.netlify.app/',
   },
 
   {
-    iconUrl: '',
+    iconUrl: home,
     theme: 'btn-back-black',
     name: 'Home Smart Landing Page',
     description:
       'Developed a Landing Page in a clean and uncomplicated layout while ensuring the site is responsive to different screen sizes.',
     link: 'https://github.com/ShahramShakiba/HomeSmart-Landing-Page',
+    liveLink: 'https://shahramshakiba.github.io/HomeSmart-Landing-Page/',
   },
   {
-    iconUrl: '',
+    iconUrl: bank,
     theme: 'btn-back-yellow',
     name: 'Bank Landing Page',
     description:
       'Developed a Landing Page in a clean and uncomplicated layout while ensuring the site is responsive to different screen sizes.',
     link: 'https://github.com/ShahramShakiba/Bank-Landing-Page',
+    liveLink: 'https://shahramshakiba.github.io/Bank-Landing-Page/',
   },
 ];

@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 
 export default function App() {
   return (
-    <main className="bg-slate-300/20 h-[100vh]">
+    <main className="bg-slate-300/20 h-[100%]">
       <Router>
         <Navbar />
 
