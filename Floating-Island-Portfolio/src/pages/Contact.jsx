@@ -2,6 +2,8 @@ import { Suspense, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import emailjs from '@emailjs/browser';
 import Fox from '../models/Fox';
+import Alert from '../components/Alert';
+import useAlert from '../hooks/useAlert';
 import Loader from '../components/Loader';
 
 export default function Contact() {
@@ -13,6 +15,7 @@ export default function Contact() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState('idle');
+  const { alert, showAlert, hideAlert } = useAlert();
 
   const handleChange = (e) => {
     setForm({
@@ -40,14 +43,20 @@ export default function Contact() {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
+        //after sending the message
         setIsLoading(false);
-
         //show success msg
-        //hide an alert
+        showAlert({
+          show: true,
+          text: 'Message sent successfully!',
+          type: 'success',
+        });
 
         setTimeout(() => {
+          //hide an success alert
+          hideAlert();
           setCurrentAnimation('idle');
-          //clear the form after sending
+          //clear the form
           setForm({
             name: '',
             email: '',
@@ -58,9 +67,13 @@ export default function Contact() {
       .catch((error) => {
         setIsLoading(false);
         setCurrentAnimation('idle');
-        console.log(error);
-
         //show error msg
+        showAlert({
+          show: true,
+          text: 'I did not receive your message!',
+          type: 'danger',
+        });
+        console.log(error);
       });
   };
 
@@ -71,6 +84,9 @@ export default function Contact() {
 
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
+      {alert.show && <Alert {...alert} />}
+      <Alert {...alert} />
+      
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get In Touch</h1>
 
