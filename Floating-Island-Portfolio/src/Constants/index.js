@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla } from '../assets/images';
+import {  zur, starbucks, tesla } from '../assets/images';
 import {
   car,
   contact,
@@ -136,8 +136,8 @@ export const experiences = [
   {
     title: 'Team & Website Management Leader',
     company_name: 'Hotel Zur Au',
-    icon: starbucks,
-    iconBg: '#accbe1',
+    icon: zur,
+    iconBg: '#d1e4e4',
     date: 'Jul 2020 - Aug 2021',
     points: [
       "Transformed the hotel's digital footprint by launching an interactive website; increased customer engagement by 40% and boosted online bookings by 20% within the second quarter.",

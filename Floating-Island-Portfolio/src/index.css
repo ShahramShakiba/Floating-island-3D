@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,15 +11,15 @@
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 /*  targeting a specific element with the class "card" that has a data attribute "data-color" set to "blue" and is being hovered over.  */
-body:has(.card[data-color="blue"]:hover) {
+body:has(.card[data-color='blue']:hover) {
   background-color: rgb(var(--blue-rgb) / 25%);
 }
 
-body:has(.card[data-color="green"]:hover) {
+body:has(.card[data-color='green']:hover) {
   background-color: rgb(var(--green-rgb) / 25%);
 }
 
@@ -174,16 +174,16 @@ body:has(.card[data-color="green"]:hover) {
 .neo-brutalism-blue {
   background: #632be7da;
   position: relative;
-  border-radius:8% 1%;
+  border-radius: 8% 1%;
   border: #2b76e7b4;
-  box-shadow: 0.6vmin 0.6vmin #336cc1e3, 1vmin 1vmin #632be794, 1vmin 1vmin #632be7c2,
-    0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092dbb2;
+  box-shadow: 0.6vmin 0.6vmin #336cc1e3, 1vmin 1vmin #632be794,
+    1vmin 1vmin #632be7c2, 0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092dbb2;
 }
 
 .neo-brutalism-white {
   background: #363636d5;
   border: #fff;
   color: #11d3f3;
-  box-shadow: 0.6vmin 0.6vmin #5386afb4, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
-    0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
+  box-shadow: 0.6vmin 0.6vmin #5386afb4, 1vmin 1vmin #d2e4ff,
+    1vmin 1vmin #d2e4ff, 0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
 }
