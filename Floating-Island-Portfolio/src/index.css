@@ -79,7 +79,7 @@ body:has(.card[data-color='green']:hover) {
   }
 
   .cta-text {
-    @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
+    @apply text-black-500 font-extrabold flex-1 text-2xl max-md:text-center;
   }
 }
 

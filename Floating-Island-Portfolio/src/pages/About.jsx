@@ -4,6 +4,7 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import CTA from '../components/CTA';
 
 export default function About() {
   return (
@@ -103,6 +104,10 @@ export default function About() {
           </VerticalTimeline>
         </div>
       </div>
+
+      {/*========== CTA ==========*/}
+      <hr className="border-slate-300 shadow-xl" />
+      <CTA />
     </section>
   );
 }
