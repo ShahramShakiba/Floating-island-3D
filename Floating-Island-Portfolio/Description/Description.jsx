@@ -303,4 +303,9 @@ const { gl, viewport } = useThree();
 # npm install @emailjs/browser
 
 
+
+* react-vertical-timeline-component
+- related to showcasing Work Experience
+
+# npm i react-vertical-timeline-component
 */
