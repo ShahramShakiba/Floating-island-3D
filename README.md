@@ -1,42 +1,51 @@
-# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" /> &nbsp; _Floating Island Portfolio_ &nbsp; <img src="https://skillicons.dev/icons?i=threejs" height="35" alt="nextjs logo"  /> <img src="https://skillicons.dev/icons?i=react" height="35" alt="react logo"  />  <img src="https://skillicons.dev/icons?i=tailwind" height="35" alt="tailwindcss logo"  />
+# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" /> &nbsp; _Shahram Shakiba's Portfolio_ &nbsp; <img src="https://skillicons.dev/icons?i=threejs" height="35" alt="nextjs logo"  /> <img src="https://skillicons.dev/icons?i=react" height="35" alt="react logo"  />  <img src="https://skillicons.dev/icons?i=tailwind" height="35" alt="tailwindcss logo"  />
 
 <!----------------------------------------- Description ---------------------------------------->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Bubbles.png" alt="Bubbles" width="40" height="40" />&nbsp; _Description_
 
-> To begin with, it is important to note that, this project have been sourced from an exceptional Three.js Course from "JavaScript Mastery" Website. <br/>
+> To begin with, it is important to note that, this project have been sourced from an exceptional Three.js Course from "JavaScript Mastery". <br/>
  
 > 👤 Instructed by a _proficient_ and _expert educator_, ` "Adrian Hajdin". ` 
-
- <br/>
  
-### 🧩 _Three.js_ is a JavaScript library that is primarily used for creating 3D computer graphics in a web browser.
+###  _Three.js_ is a JavaScript library that is primarily used for creating 3D computer graphics in a web browser.
 - #### _It provides a wide range of tools and functionalities for developers to build interactive 3D experiences on the web, ranging from simple animations to complex visualizations._
   
-<br/> <br/> 
+<br/> 
 
 
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
+<br/>
+
 <!--===================== Floating Island Portfolio =============================-->
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Laptop.webp" alt="Laptop" width="35" height="30"  /> &nbsp; _Floating Island Portfolio_  &nbsp; <img src="https://skillicons.dev/icons?i=threejs" height="30" alt="nextjs logo"  />
 
-#### 🧩 For this project, the focus is on creating an interactive experience where users can engage by moving a _Character_ within the 3D environment.
-- By combining these technologies, the project aims to showcase the capabilities of Three.js for creating immersive web experiences. <br/><br/>
+ ### 🧩 Picture this: you have the power to navigate a breathtaking floating island in a mesmerizing 3D environment.
+ #### - _This project is not just a showcase of my skills, but a testament to my ability to create dynamic web experiences that push boundaries and leave a lasting impression._ 
+
+ <br/><br/>
 
 > [!IMPORTANT]
->> - It is crucial to grasp that the project incorporates _"Three.js"_, _"Vite"_, _"React.js"_ and _"Tailwindcss"_ to build a visually impressive 3D portfolio.
+>> #### It is crucial to grasp that the project incorporates _"Three.js"_, _"Vite"_, _"React.js"_ and _"Tailwindcss"_ to build a visually impressive 3D portfolio.
+
+  <br/>
+
+- Get ready to embark on a journey like no other as you explore this innovative portfolio showcase 🤩 
 
 <br/><br/>
 
 > _Which Concepts in Have I Covered_: 
-##### _Using React Router Component to set our routes_
-##### _Using NavLink Component_
-##### _Install & Using React-three-fiber: A React renderer for Three.js_
-##### _Using 'Canvas' Component: enabling the rendering of 3D scenes and animations using Three.js under the hood._
-##### _Using 'Suspense' Component: better user experience by showing "loading-indicators" or "fallback-content" while waiting for data fetching_
-##### _Install & Using React-three-drei: acts as a bridge between React and Three.js to turn jsx to 3D_
-##### _Install & Use React-spring-three: to facilitate the integration of "animations" and "transitions" into 3D scenes_
+01. _Implementing route configurations with the "React Router" Component._
+02. _Setting up and utilizing "React-three-fiber", a React renderer designed for Three.js._
+03. _Utilizing the 'Canvas' Component to facilitate the display of 3D environments and animations through the utilization of Three.js technology._
+04. _Enhancing user experience through the use of "Suspense" component by displaying either "loading indicators" or "fallback content" during data retrieval._
+05. _Utilize "React-three-drei" to seamlessly connect React with Three.js and transform jsx into a 3D environment._
+06. _Implement and utilize "React-spring-three" to seamlessly incorporate animations and transitions within 3D environments._
+07. __
+
+
+
 ##### _Add the Island to the Scene and Adjust it for Screen size_
 ##### _Add 'directionalLight', 'ambientLight' and 'hemisphereLight' to the Scene_
 ##### _Add the Sky to the Scene using <primitive /> Component_
@@ -53,6 +62,11 @@
 
  
 <br/><br/>
+
+<!-------- try it live -------->
+#### _Give it a go in real-time and give me a Star_ &nbsp; <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png" alt="Glowing Star" width="25"  /> <a href="https://shahramshakiba.vercel.app/" target="_blank"> &nbsp; _My Portfolio_ </a> 
+
+<br/>
 
 <!--------- Video --------->
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
