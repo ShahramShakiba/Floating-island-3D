@@ -35,31 +35,24 @@
 
 <br/><br/>
 
-> _Which Concepts in Have I Covered_: 
+> _Which Concepts Have I Covered_: 
 01. _Implementing route configurations with the "React Router" Component._
 02. _Setting up and utilizing "React-three-fiber", a React renderer designed for Three.js._
 03. _Utilizing the 'Canvas' Component to facilitate the display of 3D environments and animations through the utilization of Three.js technology._
 04. _Enhancing user experience through the use of "Suspense" component by displaying either "loading indicators" or "fallback content" during data retrieval._
 05. _Utilize "React-three-drei" to seamlessly connect React with Three.js and transform jsx into a 3D environment._
 06. _Implement and utilize "React-spring-three" to seamlessly incorporate animations and transitions within 3D environments._
-07. __
-
-
-
-##### _Add the Island to the Scene and Adjust it for Screen size_
-##### _Add 'directionalLight', 'ambientLight' and 'hemisphereLight' to the Scene_
-##### _Add the Sky to the Scene using <primitive /> Component_
-##### _Add functionality to rotate the Island with Mouse Event or Touch Event_
-##### _Use 'useEffect' & 'useFrame' to update Island rotation_
-##### _Utilizing Plane Rotation using useAnimations Hook_
-##### _Make the Bird fly across th Island using 'useEffect' & 'useFrame'_
-##### _Implementing Content for all stages in the Island_
-##### _Add Contact Form_
-##### _Using EmailJS to send emails directly_
-##### _Add a Fox to the Contact Scene, then active animations for the Fox_
-##### _Create a Custom Hook for Alert Message_
-##### _Using react-vertical-timeline-component for showcasing Work Experience_
-
+07. _Utilizing the "Sketchfab" website to browse pre-built models in search of our specific model._
+08. _Incorporate all models such as Island, Plane, and Fonix into the Scene and optimize them for the screen size._
+09. _To enhance the Scene, incorporate 'directionalLight', 'ambientLight', and 'hemisphereLight' as light sources._
+10. _To incorporate the sky into the scene utilizing the <primitive /> component in a technical manner._
+11. _To enhance user interaction, implement the capability for Island rotation using Mouse Events or Touch Events._
+12. _Utilize the 'useEffect' and 'useFrame' hooks in React to dynamically update the rotation of an Island component._
+13. _Employing plane rotation through the use of the useAnimations Hook in a technical manner._
+14. _To enable the bird to traverse the island, employ the 'useEffect' and 'useFrame' hooks for optimal performance and synchronization._
+15. _Deploying content to cater to the various phases within the Island's lifecycle._
+16. _Integrate a Fox into the Contact Scene and initiate animations for the Fox._
+17. _Utilizing the "react-vertical-timeline-component" to display professional work experience in a structured and organized manner._
  
 <br/><br/>
 
@@ -71,7 +64,7 @@
 <!--------- Video --------->
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Clapper%20Board.webp" alt="Clapper Board" width="35" />
 
-
+https://github.com/ShahramShakiba/My-Portfolio/assets/110089830/26fe50d2-9698-4881-af3a-5f5fea55fc9b
 
   <br/> 
 
