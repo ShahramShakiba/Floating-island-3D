@@ -8,6 +8,7 @@ export default function Plane({ isRotating, ...props }) {
   const { scene, animations } = useGLTF(planeScene);
   //interact with animations 
   const { actions } = useAnimations(animations, planeRef);
+  console.log(actions);
 
   useEffect(() => {
     if (isRotating) {

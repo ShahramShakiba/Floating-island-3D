@@ -31,7 +31,7 @@ export default function Home() {
   //============ Island Screen Size
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
-    let screenPosition = [0, -6.5, -43];
+    let screenPosition = [0, -7, -45];
     let rotation = [0.1, 4.7, 0];
 
     if (window.innerWidth < 768) {
@@ -50,11 +50,11 @@ export default function Home() {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, -1.5, 0];
+      screenScale = [0.8, 0.8, 0.8];
+      screenPosition = [0, -2.3, 0];
     } else {
-      screenScale = [3, 3, 3];
-      screenPosition = [0, -4, -4];
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [1, -3.7, -4];
     }
 
     return [screenScale, screenPosition];
@@ -95,7 +95,7 @@ export default function Home() {
           <Plane
             scale={planeScale}
             position={planePosition}
-            rotation={[0, 20, 0]}
+            rotation={[0, 11, 0.05]}
             isRotating={isRotating}
           />
         </Suspense>
