@@ -124,7 +124,7 @@ export const skills = [
 
 export const experiences = [
   {
-    title: 'Team & Website Management Leader',
+    title: 'Frontend Developer, Team Manager',
     company_name: 'Hotel Zur Au',
     icon: zur,
     iconBg: '#d1e4e4',

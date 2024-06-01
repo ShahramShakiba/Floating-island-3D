@@ -4,6 +4,7 @@ import { useGLTF } from '@react-three/drei';
 import { useRef, useEffect } from 'react';
 import { a } from '@react-spring/three';
 import islandScene from '../assets/3D/island.glb';
+import * as THREE from 'three';
 
 export default function Island({
   isRotating,
@@ -13,13 +14,17 @@ export default function Island({
 }) {
   const islandRef = useRef();
   const { nodes, materials } = useGLTF(islandScene);
-  //access renderer & camera|viewport
-  const { gl, viewport } = useThree();
+  // Access renderer & camera | viewport
+  const { gl, viewport, scene } = useThree();
 
-  //use a ref for the last mouse x position
+  // Enable shadow mapping in the renderer
+  gl.shadowMap.enabled = true;
+  gl.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  // Use a ref for the last mouse x position
   const lastX = useRef(0);
   const rotationSpeed = useRef(0);
-  //control rotation damping
+  // Control rotation damping
   const dampingFactor = 0.95;
 
   // Handle pointer |mouse or touch| down event
@@ -28,12 +33,12 @@ export default function Island({
     e.preventDefault();
     setIsRotating(true);
 
-    //user interaction is via "first-touch-point" or via a "mouse-click"
+    // User interaction is via "first-touch-point" or via a "mouse-click"
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     lastX.current = clientX;
   };
 
-  const handlePointerUP = (e) => {
+  const handlePointerUp = (e) => {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(false);
@@ -45,10 +50,10 @@ export default function Island({
 
     if (isRotating) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-      //calculated the difference between the current and the previous position
+      // Calculate the difference between the current and the previous position
       const delta = (clientX - lastX.current) / viewport.width;
 
-      //adjust the island-rotation-speed based on the mouse/touch movement
+      // Adjust the island-rotation-speed based on the mouse/touch movement
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
@@ -73,28 +78,28 @@ export default function Island({
     }
   };
 
-  //is called on each frame update for a smooth UX
+  // Is called on each frame update for a smooth UX
   useFrame(() => {
     if (!isRotating) {
-      //the rotation speed will decrease gradually with each frame update
+      // The rotation speed will decrease gradually with each frame update
       rotationSpeed.current *= dampingFactor;
 
-      //stop the rotation if speed is low
+      // Stop the rotation if speed is low
       if (Math.abs(rotationSpeed.current) < 0.001) {
         rotationSpeed.current = 0;
       }
 
-      //slow down the island-rotation to have a smooth rotation
+      // Slow down the island-rotation to have a smooth rotation
       islandRef.current.rotation.y += rotationSpeed.current;
     } else {
-      //When rotating, determine the current-stage based on island's orientation
+      // When rotating, determine the current-stage based on island's orientation
       const rotation = islandRef.current.rotation.y;
 
-      //rotation stays in a "full-circle" in radians
+      // Rotation stays in a "full-circle" in radians
       const normalizedRotation =
         ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
 
-      // Set the current-stages(like about, ...) based on the orientation
+      // Set the current-stages (like about, ...) based on the orientation
       switch (true) {
         case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
           setCurrentStage(4);
@@ -118,57 +123,84 @@ export default function Island({
     }
   });
 
-  // move the island with "touch" or "mouse"
+  // Move the island with "touch" or "mouse"
   useEffect(() => {
-    //attach all these elements to the regular-DOM(Canvas)
+    // Attach all these elements to the regular-DOM (Canvas)
     const canvas = gl.domElement;
 
-    //Add event listeners for pointer and keyboard events
+    // Add event listeners for pointer and keyboard events
     canvas.addEventListener('pointerdown', handlePointerDown);
-    canvas.addEventListener('pointerup', handlePointerUP);
+    canvas.addEventListener('pointerup', handlePointerUp);
     canvas.addEventListener('pointermove', handlePointerMove);
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('keyup', handleKeyUp);
 
-    //clean up fn - remove event listeners when component unmounts
+    // Clean up function - remove event listeners when component unmounts
     return () => {
       canvas.removeEventListener('pointerdown', handlePointerDown);
-      canvas.removeEventListener('pointerup', handlePointerUP);
+      canvas.removeEventListener('pointerup', handlePointerUp);
       canvas.removeEventListener('pointermove', handlePointerMove);
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('keyup', handleKeyUp);
     };
-  }, [gl, handlePointerDown, handlePointerUP, handlePointerMove]);
+  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
 
   return (
     <a.group ref={islandRef} {...props}>
       <mesh
         geometry={nodes.polySurface944_tree_body_0.geometry}
         material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
       />
       <mesh
         geometry={nodes.polySurface945_tree1_0.geometry}
         material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
       />
       <mesh
         geometry={nodes.polySurface946_tree2_0.geometry}
         material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
       />
       <mesh
         geometry={nodes.polySurface947_tree1_0.geometry}
         material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
       />
       <mesh
         geometry={nodes.polySurface948_tree_body_0.geometry}
         material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
       />
       <mesh
         geometry={nodes.polySurface949_tree_body_0.geometry}
         material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
       />
       <mesh
         geometry={nodes.pCube11_rocks1_0.geometry}
         material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
+      />
+      <directionalLight
+        castShadow
+        position={[5, 13, 7.5]}
+        intensity={1.9}
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-far={50}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+        shadow-bias={-0.08}
       />
     </a.group>
   );
