@@ -105,7 +105,7 @@ export default function Home() {
         <img
           src={!isPlayingMusic ? soundoff : soundon}
           alt="sound"
-          className="w-10- h-10 cursor-pointer object-contain"
+          className="w-10 h-10 cursor-pointer object-contain sm:w-8 sm:h-8"
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
         />
       </div>
