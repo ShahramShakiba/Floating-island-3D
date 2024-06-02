@@ -101,11 +101,11 @@ export default function Home() {
         </Suspense>
       </Canvas>
 
-      <div className="absolute bottom-2 left-2">
+      <div className="absolute bottom-4 left-2 z-20">
         <img
           src={!isPlayingMusic ? soundoff : soundon}
           alt="sound"
-          className="w-10 h-10 cursor-pointer object-contain sm:w-8 sm:h-8"
+          className="w-10 h-10 sm:w-8 sm:h-8 cursor-pointer object-contain"
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
         />
       </div>
