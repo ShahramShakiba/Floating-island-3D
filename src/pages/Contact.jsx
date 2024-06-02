@@ -5,6 +5,7 @@ import Fox from '../models/Fox';
 import Alert from '../components/Alert';
 import useAlert from '../hooks/useAlert';
 import Loader from '../components/Loader';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -86,7 +87,7 @@ export default function Contact() {
     <section className="relative flex lg:flex-row flex-col max-container h-full">
       {alert.show && <Alert {...alert} />}
 
-      <div className="flex-1 min-w-[50%] flex flex-col">
+      <div className="flex-1 min-w-[50%] flex flex-col ">
         <h1 className="head-text">Get In Touch</h1>
 
         <form
@@ -148,9 +149,33 @@ export default function Contact() {
             {isLoading ? 'Sending...' : 'Send Message'}
           </button>
         </form>
+
+        <div className="flex justify-center gap-8 mt-8">
+          <a
+            href="https://www.linkedin.com/in/shahramshakiba/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="w-8 h-8 text-blue-700 hover:text-blue-900" />
+          </a>
+          <a
+            href="https://github.com/ShahramShakiba"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="w-8 h-8 text-gray-700 hover:text-black" />
+          </a>
+          <a
+            href="mailto:shahramshakibaa@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaEnvelope className="w-8 h-8 text-rose-500 hover:text-rose-600" />
+          </a>
+        </div>
       </div>
 
-      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]  max-sm:h-[270px] sm:mt-0">
         <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }}>
           <directionalLight intensity={2.5} position={[0, 0, 1]} />
           <ambientLight intensity={0.3} />
@@ -158,9 +183,9 @@ export default function Contact() {
           <Suspense fallback={<Loader />}>
             <Fox
               currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
-              rotation={[12.6, -0.65, 0]}
-              scale={[0.53, 0.53, 0.53]}
+              position={[0.9, 0, 0]}
+              rotation={[12.6, -0.78, 0]}
+              scale={[0.63, 0.63, 0.63]}
             />
           </Suspense>
         </Canvas>
