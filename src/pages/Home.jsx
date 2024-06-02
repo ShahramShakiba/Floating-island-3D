@@ -101,7 +101,7 @@ export default function Home() {
         </Suspense>
       </Canvas>
 
-      <div className="absolute bottom-4 left-2 z-20">
+      <div className="absolute bottom-4 max-sm:bottom-20 left-2 z-20">
         <img
           src={!isPlayingMusic ? soundoff : soundon}
           alt="sound"
