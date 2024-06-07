@@ -129,6 +129,9 @@ export default function Island({
     const canvas = gl.domElement;
 
     // Add event listeners for pointer and keyboard events
+    canvas.addEventListener('mousedown', handlePointerDown, { passive: false });
+    canvas.addEventListener('mouseup', handlePointerUp, { passive: false });
+    canvas.addEventListener('mousemove', handlePointerMove, { passive: false });
     canvas.addEventListener('touchstart', handlePointerDown, {
       passive: false,
     });
@@ -139,9 +142,12 @@ export default function Island({
 
     // Clean up function - remove event listeners when component unmounts
     return () => {
-      canvas.removeEventListener('pointerdown', handlePointerDown);
-      canvas.removeEventListener('pointerup', handlePointerUp);
-      canvas.removeEventListener('pointermove', handlePointerMove);
+      canvas.removeEventListener('mousedown', handlePointerDown);
+      canvas.removeEventListener('mouseup', handlePointerUp);
+      canvas.removeEventListener('mousemove', handlePointerMove);
+      canvas.removeEventListener('touchstart', handlePointerDown);
+      canvas.removeEventListener('touchend', handlePointerUp);
+      canvas.removeEventListener('touchmove', handlePointerMove);
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('keyup', handleKeyUp);
     };
@@ -153,6 +159,7 @@ export default function Island({
     handleKeyDown,
     handleKeyUp,
   ]);
+
   return (
     <a.group ref={islandRef} {...props}>
       <mesh

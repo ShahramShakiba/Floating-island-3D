@@ -6,4 +6,7 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.glb'],
   base: './',
+  server: {
+    host: true, // Open to local network and display URL
+  },
 });

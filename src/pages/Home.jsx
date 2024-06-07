@@ -62,8 +62,8 @@ export default function Home() {
   const [planeScale, planePosition] = adjustPlaneForScreenSize();
 
   return (
-    <section className="w-full h-screen relative">
-      <div className="absolute top-28 left-0 right-0 z-10 flex justify-center items-center">
+    <section className="relative w-full h-screen">
+      <div className="absolute left-0 right-0 z-10 flex items-center justify-center top-28">
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
 
@@ -101,11 +101,11 @@ export default function Home() {
         </Suspense>
       </Canvas>
 
-      <div className="absolute bottom-4 max-sm:bottom-20 left-2 z-20">
+      <div className="absolute z-20 bottom-4 max-sm:bottom-20 left-2">
         <img
           src={!isPlayingMusic ? soundoff : soundon}
           alt="sound"
-          className="w-10 h-10 sm:w-8 sm:h-8 cursor-pointer object-contain"
+          className="object-contain w-10 h-10 cursor-pointer sm:w-8 sm:h-8"
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
         />
       </div>
