@@ -55,9 +55,9 @@ export default function Island({
       const rotationFactor = e.touches ? 0.003 : 0.015;
 
       // Adjust the island-rotation-speed based on the mouse/touch movement
-      islandRef.current.rotation.y += delta * rotationFactor  * Math.PI;
+      islandRef.current.rotation.y += delta * rotationFactor * Math.PI;
       lastX.current = clientX;
-      rotationSpeed.current = delta * rotationFactor  * Math.PI;
+      rotationSpeed.current = delta * rotationFactor * Math.PI;
     }
   };
 
