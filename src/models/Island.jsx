@@ -52,11 +52,12 @@ export default function Island({
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       // Calculate the difference between the current and the previous position
       const delta = (clientX - lastX.current) / viewport.width;
+      const rotationFactor = e.touches ? 0.003 : 0.015;
 
       // Adjust the island-rotation-speed based on the mouse/touch movement
-      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+      islandRef.current.rotation.y += delta * rotationFactor  * Math.PI;
       lastX.current = clientX;
-      rotationSpeed.current = delta * 0.01 * Math.PI;
+      rotationSpeed.current = delta * rotationFactor  * Math.PI;
     }
   };
 
